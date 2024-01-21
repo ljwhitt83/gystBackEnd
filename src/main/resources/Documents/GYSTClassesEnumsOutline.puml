@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+class user{
+- userName: String
+- firstName: String
+- password: String
+- anyChildren: boolean
+- chores: choreName[]
+
+}
+
+class userChildren{
+- userName: String
+- parentName: String
+- password: String
+}
+
+class chores {
+- choreName: String
+- room: String
+- level: List[]
+}
+
+enum level {
+EASY,
+MEDIUM,
+HARD
+}
+
+
+user *-- userChildren
+user *-- chores
+userChildren *-- chores
+chores *-- level
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
